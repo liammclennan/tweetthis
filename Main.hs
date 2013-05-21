@@ -14,6 +14,7 @@ import Evaluator
 main = do
   scotty 3000 $ do
     middleware $ staticPolicy (noDots >-> addBase "public")
+    
     get "/" $ htmlPartial $ W.welcome Start
 
     post "/" $ do
